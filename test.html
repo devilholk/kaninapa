@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<title>Test</title>
+	<script>
+
+		function send_test_packet(num) {
+			var xmlhttp;
+
+			if (window.XMLHttpRequest) {
+			    xmlhttp = new XMLHttpRequest();
+
+				// xmlhttp.onreadystatechange = function (e) {
+				// 	console.log("BLAAARGH", xmlhttp.readyState);
+				// 	xmlhttp.abort();
+				// };
+
+			    xmlhttp.open("POST", "http://192.168.1.67:420" , false);
+			    xmlhttp.send("djävulskanin " + num.toString());
+			    console.log(xmlhttp);
+
+			}			
+		}
+
+		function t1() {
+			send_test_packet(42);
+		}
+
+		function t2() {
+			send_test_packet(142);
+		}
+
+	</script>
+</head>
+<body>
+
+<button onclick="t1()">Blandad kanin</button>
+<button onclick="t2()">Icke blandad kanin</button>
+
+
+</body>
+</html>
